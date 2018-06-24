@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-image: url("../images/memphis-colorful.png");
+    font-family: 'Angkor';font-size: 22px;
+ }
+
+ .card {
+    background-color: #d5f4e6;
+    line-height: 1.0;
+ }
+
+ .card-header {
+    background-color: #b9e4f5;
+ }
+
+ .page-header {
+     text-align: center;
+
+ }
