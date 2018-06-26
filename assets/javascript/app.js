@@ -104,24 +104,23 @@ $(document).ready(function () {
         //Once the timer gets to 0, stop the timer via clearInterval()
         if(timeleft <= 0)
             clearInterval(timer);
-            //timeUp();
             // The following line will play the audio file we linked to above.
             //***********************Uncomment audio.play() before you submit */
             // audio.play();
         },3 * 1000); //this should be 30 not 3 but it doesn't act like 30 seconds https://stackoverflow.com/questions/22975537/js-timer-is-running-slow
-        
+        //timeUp();
         // The following line will play the audio file we linked to above.
         //***********************Uncomment audio.play() before you submit */
         // audio.play();
     }
 
-    // function timeUp() {
+    function timeUp() {
 
-    //     // in the element with an id of time-remaining add a p saying Time's Up!
-    //     // console log done
-    //     $('#time-remaining').html("<p>Time's up!</hr>");
-    //       console.log("done");
-    //   }
+        // in the element with an id of time-remaining add a p saying Time's Up!
+        // console log done
+        $('#time-remaining').html("<p>Time's up!</hr>");
+          console.log("done");
+      }
 
     function showResults(){
             //When the user clicks the Submit Answers button, hide time-remaining, submit-answers, and quiz. Then show results.
@@ -139,7 +138,7 @@ $(document).ready(function () {
     startTimer();
     // showResults();
     //When the user clicks Submit Answers, call showResults function to display results to the user
-    // submitButton.addEventListener('click', showResults);
+    submitButton.addEventListener('click', showResults);
 
 
 
