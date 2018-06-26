@@ -48,7 +48,7 @@ $(document).ready(function () {
                 $("#time-remaining").show();
                 $("#quiz").show();
                 $("#submit-answers").show();
-                startTimer();
+                // startTimer();
         });
     }
     
@@ -89,53 +89,39 @@ $(document).ready(function () {
     }
 
     function startTimer () {
-        // Step 1:
         // Use the following link inside the Audio function below:
         // https://p.scdn.co/mp3-preview/ed5a443bc86176135ebca8a114f66f4d814d4c90
         var audio = new Audio("https://p.scdn.co/mp3-preview/ed5a443bc86176135ebca8a114f66f4d814d4c90");
 
-        //  Step 2: do the following between the --- comments
-
-        //  after 10 seconds, execute the tenSeconds function
-        setTimeout(tenSeconds, 10000);
-
-        //  after 15 seconds, execute the timeUp function
-        setTimeout(timeUp, 15000);
-        // ---------------------
-        // CODE STEP TWO HERE
-        // ---------------------
-
-
-        // Step 3:
-        // Fill in the blanks to these functions.
+        //  Step 2: Set countdown timer to 30 seconds
+        var timeleft = 30; //# of seconds
+        var timer = setInterval(function(){
+        timeleft--;
+        //display timeleft in #time-remaining
+        //document.getElementById("time-remaining").textContent = timeleft;  //not sure if I like this, is there a jQuery way to do this?
+        $("#time-remaining").html("<p>" + timeleft + " seconds</p>"); 
+    
+        //Once the timer gets to 0, stop the timer via clearInterval()
+        if(timeleft <= 0)
+            clearInterval(timer);
+            //timeUp();
+            // The following line will play the audio file we linked to above.
+            //***********************Uncomment audio.play() before you submit */
+            // audio.play();
+        },3 * 1000); //this should be 30 not 3 but it doesn't act like 30 seconds https://stackoverflow.com/questions/22975537/js-timer-is-running-slow
         
-        function tenSeconds() {
-
-          // in the element with an id of time-remaining add a p saying About 5 Seconds Left!
-          // console log 5 seconds left
-          $('#time-remaining').html("<p>About 10 Seconds Left!</hr>");
-            console.log("10 seconds left");
-
-        }
-
-
-        function timeUp() {
-
-          // in the element with an id of time-remaining add a p saying Time's Up!
-          // console log done
-          $('#time-remaining').html("<p>Time's up!</hr>");
-            console.log("done");
-
-          // The following line will play the audio file we linked to above.
-          //***********************Uncomment audio.play() before you submit */
-          // audio.play();
-
-        }
-
-
+        // The following line will play the audio file we linked to above.
+        //***********************Uncomment audio.play() before you submit */
+        // audio.play();
     }
 
+    // function timeUp() {
 
+    //     // in the element with an id of time-remaining add a p saying Time's Up!
+    //     // console log done
+    //     $('#time-remaining').html("<p>Time's up!</hr>");
+    //       console.log("done");
+    //   }
 
     function showResults(){
             //When the user clicks the Submit Answers button, hide time-remaining, submit-answers, and quiz. Then show results.
@@ -148,14 +134,12 @@ $(document).ready(function () {
         });
     }
 
-
-
     buildIntro();
     buildQuiz();
-    
+    startTimer();
     // showResults();
     //When the user clicks Submit Answers, call showResults function to display results to the user
-    submitButton.addEventListener('click', showResults);
+    // submitButton.addEventListener('click', showResults);
 
 
 
