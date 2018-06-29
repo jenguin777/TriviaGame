@@ -3,13 +3,15 @@
 }
 
 body {
-    /* background-image: url("../images/memphis-colorful.png"); */
+    background-image: url("../images/memphis-colorful.png");
     font-family: 'Angkor';font-size: 22px;
+    margin: 30px;
  }
 
  .card {
     background-color: #d5f4e6;
     line-height: 1.0;
+    margin-left: 40px;
  }
 
  .card-header {
@@ -20,3 +22,23 @@ body {
      text-align: center;
 
  }
+
+ .quiz {
+     margin-left: 20px;
+ }
+
+ /*Add spacing around the radio buttons*/
+ input[type="radio"]{
+    margin: 0 10px 0 10px;
+  }
+
+  article {
+    width: 1200px;
+    background-color: #d5f4e6;
+    padding: 20px;
+    margin-left: 220px;
+  }
+
+  #results {
+      margin-left: 25px;
+  }
